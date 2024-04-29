@@ -39,13 +39,15 @@ public class ListActivity extends AppCompatActivity {
         builder.setPositiveButton("VIEW", new DialogInterface.OnClickListener(){
             public void onClick(DialogInterface dialog, int id){
                 Intent goToMainActivity = new Intent (ListActivity.this, MainActivity.class);
-                Random random = new Random();
-                goToMainActivity.putExtra("randomNumber",random.nextInt(1-100000));
+                //Random random = new Random();
+                //goToMainActivity.putExtra("randomNumber",random.nextInt(100000));
+               // goToMainActivity.putExtra("randomNumber",1234);
                 startActivity(goToMainActivity);
             }
         });
         builder.setNegativeButton("CLOSE", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
+
                 dialog.dismiss();
             }
         }

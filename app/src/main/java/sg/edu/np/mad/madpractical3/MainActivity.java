@@ -13,6 +13,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Random;
+
 import sg.edu.np.mad.madpractical2.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,9 +43,11 @@ public class MainActivity extends AppCompatActivity {
         //Reading the random number
         Intent receivingEnd = getIntent();
         String number = receivingEnd.getStringExtra("randomNumber");
+        Random random = new Random();
+        Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
 
         //Set the TextViews with the User's name, description and default button message
-        tvName.setText(user.name);
+        tvName.setText("MAD" + random.nextInt(100000));
         tvDescription.setText(user.description);
         btnFollow.setText("Follow");
 
