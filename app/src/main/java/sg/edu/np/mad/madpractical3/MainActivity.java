@@ -43,11 +43,9 @@ public class MainActivity extends AppCompatActivity {
         //Reading the random number
         Intent receivingEnd = getIntent();
         String number = receivingEnd.getStringExtra("randomNumber");
-        Random random = new Random();
-        Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
 
         //Set the TextViews with the User's name, description and default button message
-        tvName.setText("MAD" + random.nextInt(100000));
+        tvName.setText("MAD" + number);
         tvDescription.setText(user.description);
         btnFollow.setText("Follow");
 
@@ -70,6 +68,17 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         );
+
+        //Event listener for the Message button
+        Button msgButton = findViewById(R.id.btnMessage);
+
+        msgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToMsgGroup = new Intent (MainActivity.this, MessageGroup.class);
+                startActivity(goToMsgGroup);
+            }
+        });
 
 
     }
